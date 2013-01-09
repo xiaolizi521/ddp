@@ -1,3 +1,9 @@
+
+
+
+
+
+
 #import "cocos2d.h"
 #import "SceneManager.h"
 #import "Record.h"

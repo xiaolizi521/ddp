@@ -156,6 +156,8 @@
 		A939C38D169D093D00A34F56 /* q7.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C384169D093D00A34F56 /* q7.png */; };
 		A939C38E169D093D00A34F56 /* q8.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C385169D093D00A34F56 /* q8.png */; };
 		A939C390169D097000A34F56 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = A939C38F169D097000A34F56 /* ToDo */; };
+		A939C3CF169D173B00A34F56 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C3CE169D173B00A34F56 /* Default-568h@2x.png */; };
+		A939C3D2169D185A00A34F56 /* backgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C3D1169D185A00A34F56 /* backgroud@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +460,8 @@
 		A939C384169D093D00A34F56 /* q7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = q7.png; path = Resources/images/q7.png; sourceTree = "<group>"; };
 		A939C385169D093D00A34F56 /* q8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = q8.png; path = Resources/images/q8.png; sourceTree = "<group>"; };
 		A939C38F169D097000A34F56 /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		A939C3CE169D173B00A34F56 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A939C3D1169D185A00A34F56 /* backgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backgroud@2x.png"; path = "Resources/images/backgroud@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +487,7 @@
 		A939C19F169D062300A34F56 = {
 			isa = PBXGroup;
 			children = (
+				A939C3CE169D173B00A34F56 /* Default-568h@2x.png */,
 				A939C1C0169D062300A34F56 /* ddp */,
 				A939C1AD169D062300A34F56 /* Frameworks */,
 				A939C1AB169D062300A34F56 /* Products */,
@@ -941,6 +946,7 @@
 			isa = PBXGroup;
 			children = (
 				A939C37D169D093D00A34F56 /* backgroud.png */,
+				A939C3D1169D185A00A34F56 /* backgroud@2x.png */,
 				A939C37E169D093D00A34F56 /* q1.png */,
 				A939C37F169D093D00A34F56 /* q2.png */,
 				A939C380169D093D00A34F56 /* q3.png */,
@@ -1026,6 +1032,8 @@
 				A939C38D169D093D00A34F56 /* q7.png in Resources */,
 				A939C38E169D093D00A34F56 /* q8.png in Resources */,
 				A939C390169D097000A34F56 /* ToDo in Resources */,
+				A939C3CF169D173B00A34F56 /* Default-568h@2x.png in Resources */,
+				A939C3D2169D185A00A34F56 /* backgroud@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,11 +1217,13 @@
 				GCC_PREFIX_HEADER = ddp/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"ddp/libs/kazmath/include\"";
 				INFOPLIST_FILE = ddp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1227,11 +1237,13 @@
 				GCC_PREFIX_HEADER = ddp/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"ddp/libs/kazmath/include\"";
 				INFOPLIST_FILE = ddp/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

@@ -40,7 +40,10 @@
 		[self addChild:labelValue];
 	}
 	
-	CCMenuItemFont *back = [CCMenuItemFont itemFromString:@"back" target:self selector: @selector(back:)];
+    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"bak" block:^(id sender){
+        [self back:nil];
+    }];
+    
 	CCMenu *menu = [CCMenu menuWithItems: back, nil];
 	menu.position = ccp(280, 70);
 	[self addChild: menu];

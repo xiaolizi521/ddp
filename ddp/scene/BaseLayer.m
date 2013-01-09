@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 #import "BaseLayer.h"
 
 
@@ -11,7 +18,7 @@
 	self.isTouchEnabled = YES;
 	
 	CCSprite *bg = [CCSprite spriteWithFile: @"backgroud.png"];
-	bg.position = ccp(160,240);
+	bg.position = ccp(160, 240);
 	[self addChild: bg z:0];
 	
 	

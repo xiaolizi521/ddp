@@ -6,8 +6,18 @@
 -(id) init{
 	self = [super init];
 	
-	CCMenuItemFont *resume = [CCMenuItemFont itemFromString:@"resume" target:self selector: @selector(resume:)];
-	CCMenuItemFont *back = [CCMenuItemFont itemFromString:@"back" target:self selector: @selector(back:)];
+    CCMenuItemFont *resume = [CCMenuItemFont itemWithString:@"resume" block:^(id sender){
+    
+        [self resume:nil];
+    }];
+    
+
+    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"back" block:^(id sender){
+    
+        [self back:nil];
+    }];
+    
+    
 	CCMenu *menu = [CCMenu menuWithItems: resume, back, nil];
 	[menu alignItemsVerticallyWithPadding: 30.0f]; 
 	

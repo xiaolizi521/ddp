@@ -1,4 +1,12 @@
+
+
+
+
+
+
+
 #import "PlayLayer.h"
+#import "SceneManager.h"
 
 @interface PlayLayer()
 -(void)afterOneShineTrun: (id) node;
@@ -15,6 +23,18 @@
 
 -(id) init{
 	self = [super init];
+    
+  
+    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"back" block:^(id sender){
+        [self back:nil];
+    }];
+    back.fontName = @"Courier New";
+    
+    CCMenu *menu = [CCMenu menuWithItems:back, nil];
+    [menu setPosition:ccp(320 - 40.0, 20.0)];
+    [self addChild:menu z:1];
+    
+    
 	box = [[Box alloc] initWithSize:CGSizeMake(kBoxWidth,kBoxHeight) factor:6];
 	box.layer = self;
 	box.lock = YES;
@@ -112,5 +132,10 @@
 		
 		[sprite runAction:someAction];
 	}
+}
+
+
+-(void) back:(id)sender{
+	[SceneManager goMenu];
 }
 @end

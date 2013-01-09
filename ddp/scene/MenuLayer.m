@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 #import "MenuLayer.h"
 
 @implementation MenuLayer
@@ -7,13 +14,28 @@
 	
 	CCLabelTTF *titleLeft = [CCLabelTTF labelWithString:@"Fruit " fontName:@"Marker Felt" fontSize:48];
 	CCLabelTTF *titleRight = [CCLabelTTF labelWithString:@" Pair" fontName:@"Marker Felt" fontSize:48];
-	CCMenuItemFont *startNew = [CCMenuItemFont itemFromString:@"New Game" target:self selector: @selector(onStartNew:)];
-
-	CCMenuItemFont *resume = [CCMenuItemFont itemFromString:@"Continue" target:self selector: @selector(onResume:)];
-
-	CCMenuItemFont *highscores = [CCMenuItemFont itemFromString:@"Record" target:self selector: @selector(onHighscores:)];
-
-	CCMenuItemFont *credits = [CCMenuItemFont itemFromString:@"Credits" target:self selector: @selector(onCredits:)];
+	
+    // 开始
+    [CCMenuItemFont setFontName: @"Marker Felt"];
+    CCMenuItemFont *startNew = [CCMenuItemFont itemWithString:@"New Game" block:^(id sender) {        
+        [self onStartNew:nil];
+    }];
+    
+    // 继续
+    CCMenuItemFont *resume = [CCMenuItemFont itemWithString:@"Continue" block:^(id sender) {
+        [self onResume:nil];
+    }];
+    
+    // 排行
+    CCMenuItemFont *highscores = [CCMenuItemFont itemWithString:@"Record" block:^(id sender) {
+        [self onHighscores:nil];
+    }];
+   
+    // 配置
+    CCMenuItemFont *credits = [CCMenuItemFont itemWithString:@"Credits" block:^(id sender) {
+        [self onCredits:nil];
+    }];
+    
 	
 	CCMenu *menu = [CCMenu menuWithItems:startNew, resume, highscores, credits, nil];
 	
