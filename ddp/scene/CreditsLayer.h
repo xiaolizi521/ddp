@@ -11,5 +11,7 @@
 @interface CreditsLayer : BaseLayer {
 	
 }
+
 -(void) back: (id) sender;
+
 @end
