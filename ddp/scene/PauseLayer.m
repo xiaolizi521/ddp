@@ -12,6 +12,7 @@
 @implementation PauseLayer
 
 -(id) init{
+    
 	self = [super init];
 	
     CCMenuItemFont *resume = [CCMenuItemFont itemWithString:@"resume" block:^(id sender){
@@ -47,10 +48,12 @@
 }
 
 -(void) resume: (id) sender{
+    
 	[MusicHandler notifyButtonClick];
 	[[CCDirector sharedDirector] popScene];
 }
 -(void) back: (id) sender{
+    
 	[MusicHandler notifyButtonClick];
 	[SceneManager goMenu];
 }

@@ -4,7 +4,7 @@
 
 
 #import "cocos2d.h"
-#import "User.h"
+#import "UserInfo.h"
 #import "SceneManager.h"
 #import "BaseLayer.h"
 #import "MusicHandler.h"

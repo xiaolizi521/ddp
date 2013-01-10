@@ -5,27 +5,39 @@
 
 
 
-#import "User.h"
+#import "UserInfo.h"
 
-@implementation User
+@implementation UserInfo
 
-#pragma mark clear 
-+(void) clear{
-	[User saveScore:0];
-	[User saveWinedLevel:0];
-	[User saveUsedTime:0];
+
+
+#pragma mark- init & clear 
++(void) init{
+    
+    [self saveScore:0];
+	[self saveWinedLevel:0];
+	[self saveUsedTime:0];
+    
 }
 
-#pragma mark get
++(void) clear{
+    
+    [self init];
+}
+
+#pragma mark- #Action get methods
 +(NSString *) name{
+    
 	return [[NSUserDefaults standardUserDefaults] stringForKey:kName];
 }
 
 +(int) score{
+    
 	int score = [[NSUserDefaults standardUserDefaults] integerForKey: kScore];	
 	if (score < 0) {
 		return 0;
 	}
+    
 	return score;
 }
 
@@ -42,30 +54,39 @@
 }
 
 +(int) nextLevel{
-	int winedLevel = [User winedLevel];
+	int winedLevel = [self winedLevel];
 	return winedLevel % kMaxLevelNo + 1;
 }
-#pragma mark set
+
+
+#pragma mark- #Action set methods
 
 +(void) saveName: (NSString *) name{
+    
 	[[NSUserDefaults standardUserDefaults] setObject:name forKey:kName];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
 +(void) saveScore: (int) score{
+    
 	[[NSUserDefaults standardUserDefaults] setInteger:score forKey:kScore];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+
 +(void) saveWinedLevel: (int) winedLevel{
-	if ([User winedLevel] >= winedLevel) {
+    
+	if ([self winedLevel] >= winedLevel) {
 		return;
 	}
+    
 	[[NSUserDefaults standardUserDefaults] setInteger: winedLevel forKey:kWindedLevel];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 +(void) saveUsedTime: (int) usedTime{
+    
 	[[NSUserDefaults standardUserDefaults] setInteger:usedTime forKey:kUsedTime];
 	[[NSUserDefaults standardUserDefaults] synchronize];	
 }

@@ -81,8 +81,9 @@
 #pragma mark - # Action method
 
 - (void)onStartNew:(id)sender{
+    
 	[MusicHandler notifyButtonClick];
-	[User clear];
+    [UserInfo init];
 	[self onResume: sender];
 }
 - (void)onResume:(id)sender{

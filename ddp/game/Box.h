@@ -6,10 +6,12 @@
 
 
 
-#import "constants.h"
+#import "Constants.h"
 #import "Tile.h"
 #import "CCLayer.h"
-#import "constants.h"
+#import "Constants.h"
+
+
 @interface Box : NSObject {
 	id first, second;
 	CGSize size;
@@ -19,6 +21,7 @@
 	CCLayer *layer;
 	Tile *OutBorderTile;
 }
+
 @property(nonatomic, retain) CCLayer *layer;
 @property(nonatomic, readonly) CGSize size;
 @property(nonatomic) BOOL lock;
@@ -29,4 +32,6 @@
 -(void) removeSprite: (id) sender;
 -(void) afterAllMoveDone;
 -(BOOL) haveMore;
+
+
 @end

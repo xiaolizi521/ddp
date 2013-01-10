@@ -19,6 +19,8 @@
     [encoder encodeInt:self.score forKey:kRecordScore];
 	[encoder encodeInt:self.time forKey:kRecordTime];
 }
+
+
 -(id)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];
@@ -89,22 +91,25 @@
 }
 
 +(NSArray *) getHighScores{
-	NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kRecordScore];
+	
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kRecordScore];
 	return [NSKeyedUnarchiver unarchiveObjectWithData: data];
 }
 
 +(NSArray *) getHighTimes{
-	NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kRecordTime];
+	
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:kRecordTime];
 	return [NSKeyedUnarchiver unarchiveObjectWithData: data];
 }
 
 
 
 +(Record *)createCurrentRecord{
-	Record *newRecord = [[Record alloc] init];
-	newRecord.name = [User name];
-	newRecord.score = [User score];
-	newRecord.time = [User usedTime];
+	
+    Record *newRecord = [[Record alloc] init];
+	newRecord.name = [UserInfo name];
+	newRecord.score = [UserInfo score];
+	newRecord.time = [UserInfo usedTime];
 	return newRecord;
 }
 

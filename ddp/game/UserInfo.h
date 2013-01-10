@@ -6,16 +6,19 @@
 
 
 
-#define kScore @"kScore"
-#define kWindedLevel @"kWindedLevel"
-#define kWantLevel @"kWantLevel"
-#define kName @"kName"
-#define kUsedTime @"kUsedTime"
 
-#import "constants.h"
-@interface User : NSObject {
+
+#import "Constants.h"
+
+
+@interface UserInfo : NSObject {
+
+    NSMutableDictionary *dicUserInfo;
+
 }
 
+
++(void) init;
 +(void) clear;
 
 +(NSString *) name;
@@ -28,4 +31,6 @@
 +(void) saveScore: (int) score;
 +(void) saveWinedLevel: (int) winedLevel;
 +(void) saveUsedTime: (int) usedTime;
+
+
 @end

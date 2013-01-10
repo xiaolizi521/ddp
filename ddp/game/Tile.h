@@ -8,7 +8,7 @@
 
 
 
-#import "constants.h"
+#import "Constants.h"
 
 #import "cocos2d.h"
 
@@ -26,4 +26,5 @@
 -(BOOL) nearTile: (Tile *)othertile;
 -(void) trade:(Tile *)otherTile;
 -(CGPoint) pixPosition;
+
 @end

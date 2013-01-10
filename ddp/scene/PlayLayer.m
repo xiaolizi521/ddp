@@ -21,6 +21,7 @@
 @implementation PlayLayer
 
 +(id) scene{
+    
 	CCScene *scene = [CCScene node];
 	PlayLayer *layer = [PlayLayer node];
 	[scene addChild: layer];
@@ -28,9 +29,19 @@
 }
 
 -(id) init{
+    
 	self = [super init];
+    
+    NSString *strName = @"Player1";//[UserInfo name];
+    CCLabelTTF *lblName = [CCLabelTTF labelWithString:strName fontName:@"Courier New" fontSize:20.0];
+    lblName.anchorPoint = ccp(0.0, 1.0);
+    lblName.position = ccp(0.0, 480.0);
+    [self addChild:lblName z:0];
+    
+    //初始化时间进度条
+    [self initProgress];
 
-  
+    
     //返回按钮
     CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"back" block:^(id sender){
         [self back:nil];
@@ -41,13 +52,12 @@
     [menu setPosition:ccp(320 - 40.0, 20.0)];
     [self addChild:menu z:0];
     
-    //初始化时间哦进度条
-    [self initProgress];
     
-    
-	box = [[Box alloc] initWithSize:CGSizeMake(kBoxWidth,kBoxHeight) factor:6];
+    //游戏区
+    box = [[Box alloc] initWithSize:CGSizeMake(kBoxWidth,kBoxHeight) factor:6];
 	box.layer = self;
 	box.lock = YES;
+
 	return self;
 }
 
@@ -91,7 +101,9 @@
 }
 
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
-	if ([box lock]) {
+	
+    
+    if ([box lock]) {
 		return;
 	}
 	

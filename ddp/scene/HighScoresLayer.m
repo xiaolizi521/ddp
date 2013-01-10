@@ -1,5 +1,5 @@
 #import "HighScoresLayer.h"
-#import "User.h"
+#import "UserInfo.h"
 
 @implementation HighScoresLayer
 -(id) init{

@@ -145,7 +145,7 @@
 		A939C377169D092C00A34F56 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = A939C36E169D092C00A34F56 /* Game.m */; };
 		A939C378169D092C00A34F56 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = A939C370169D092C00A34F56 /* Record.m */; };
 		A939C379169D092C00A34F56 /* Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = A939C372169D092C00A34F56 /* Tile.m */; };
-		A939C37B169D092C00A34F56 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A939C375169D092C00A34F56 /* User.m */; };
+		A939C37B169D092C00A34F56 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A939C375169D092C00A34F56 /* UserInfo.m */; };
 		A939C386169D093D00A34F56 /* backgroud.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C37D169D093D00A34F56 /* backgroud.png */; };
 		A939C387169D093D00A34F56 /* q1.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C37E169D093D00A34F56 /* q1.png */; };
 		A939C388169D093D00A34F56 /* q2.png in Resources */ = {isa = PBXBuildFile; fileRef = A939C37F169D093D00A34F56 /* q2.png */; };
@@ -464,15 +464,14 @@
 		A939C361169D092100A34F56 /* SceneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneManager.m; path = scene/SceneManager.m; sourceTree = "<group>"; };
 		A939C36A169D092C00A34F56 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Box.h; path = game/Box.h; sourceTree = "<group>"; };
 		A939C36B169D092C00A34F56 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Box.m; path = game/Box.m; sourceTree = "<group>"; };
-		A939C36C169D092C00A34F56 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = constants.h; path = game/constants.h; sourceTree = "<group>"; };
 		A939C36D169D092C00A34F56 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = game/Game.h; sourceTree = "<group>"; };
 		A939C36E169D092C00A34F56 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = game/Game.m; sourceTree = "<group>"; };
 		A939C36F169D092C00A34F56 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Record.h; path = game/Record.h; sourceTree = "<group>"; };
 		A939C370169D092C00A34F56 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Record.m; path = game/Record.m; sourceTree = "<group>"; };
 		A939C371169D092C00A34F56 /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tile.h; path = game/Tile.h; sourceTree = "<group>"; };
 		A939C372169D092C00A34F56 /* Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tile.m; path = game/Tile.m; sourceTree = "<group>"; };
-		A939C374169D092C00A34F56 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = game/User.h; sourceTree = "<group>"; };
-		A939C375169D092C00A34F56 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = game/User.m; sourceTree = "<group>"; };
+		A939C374169D092C00A34F56 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = game/UserInfo.h; sourceTree = "<group>"; };
+		A939C375169D092C00A34F56 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = game/UserInfo.m; sourceTree = "<group>"; };
 		A939C37D169D093D00A34F56 /* backgroud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backgroud.png; path = Resources/images/backgroud.png; sourceTree = "<group>"; };
 		A939C37E169D093D00A34F56 /* q1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = q1.png; path = Resources/images/q1.png; sourceTree = "<group>"; };
 		A939C37F169D093D00A34F56 /* q2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = q2.png; path = Resources/images/q2.png; sourceTree = "<group>"; };
@@ -493,6 +492,7 @@
 		A93AE698169E4A05002B07CD /* q6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "q6@2x.png"; path = "Resources/images/q6@2x.png"; sourceTree = "<group>"; };
 		A93AE699169E4A05002B07CD /* q7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "q7@2x.png"; path = "Resources/images/q7@2x.png"; sourceTree = "<group>"; };
 		A93AE69A169E4A05002B07CD /* q8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "q8@2x.png"; path = "Resources/images/q8@2x.png"; sourceTree = "<group>"; };
+		A93AE6AC169E6B6C002B07CD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = game/Constants.h; sourceTree = "<group>"; };
 		A9883C6D169D3D9A0011A427 /* pb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pb.png; sourceTree = "<group>"; };
 		A9883C6E169D3D9A0011A427 /* pb_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pb_bar.png; sourceTree = "<group>"; };
 		A9883C6F169D3D9A0011A427 /* pb_bar_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pb_bar_left.png; sourceTree = "<group>"; };
@@ -953,7 +953,7 @@
 		A939C34F169D091000A34F56 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				A939C36C169D092C00A34F56 /* constants.h */,
+				A93AE6AC169E6B6C002B07CD /* Constants.h */,
 				A939C36A169D092C00A34F56 /* Box.h */,
 				A939C36B169D092C00A34F56 /* Box.m */,
 				A939C36D169D092C00A34F56 /* Game.h */,
@@ -962,8 +962,8 @@
 				A939C370169D092C00A34F56 /* Record.m */,
 				A939C371169D092C00A34F56 /* Tile.h */,
 				A939C372169D092C00A34F56 /* Tile.m */,
-				A939C374169D092C00A34F56 /* User.h */,
-				A939C375169D092C00A34F56 /* User.m */,
+				A939C374169D092C00A34F56 /* UserInfo.h */,
+				A939C375169D092C00A34F56 /* UserInfo.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1270,7 +1270,7 @@
 				A939C377169D092C00A34F56 /* Game.m in Sources */,
 				A939C378169D092C00A34F56 /* Record.m in Sources */,
 				A939C379169D092C00A34F56 /* Tile.m in Sources */,
-				A939C37B169D092C00A34F56 /* User.m in Sources */,
+				A939C37B169D092C00A34F56 /* UserInfo.m in Sources */,
 				A9883C80169D3DB10011A427 /* Progress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
