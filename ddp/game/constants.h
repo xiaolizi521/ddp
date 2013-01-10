@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 #define kTileSize 40.0f
 #define kMoveTileTime 0.3f
 #define kBoxWidth 7

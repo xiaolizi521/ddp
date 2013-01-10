@@ -10,6 +10,7 @@
 
 @implementation BaseLayer
 -(id) init{
+    
 	self = [super init];
 	if(nil == self){
 		return nil;

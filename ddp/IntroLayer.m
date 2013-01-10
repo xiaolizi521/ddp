@@ -12,6 +12,7 @@
 #import "HelloWorldLayer.h"
 
 #import "SceneManager.h"
+#import "Progress.h"
 
 
 #pragma mark - IntroLayer
@@ -27,9 +28,13 @@
 	
 	// 'layer' is an autorelease object.
 	IntroLayer *layer = [IntroLayer node];
+    
+    Progress *layer2 = [Progress node];
+    layer2.position = ccp(0.0, 0.0);
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
+    [scene addChild:layer2];
 	
 	// return the scene
 	return scene;

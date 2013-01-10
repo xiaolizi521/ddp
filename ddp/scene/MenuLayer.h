@@ -8,6 +8,9 @@
 #import "SceneManager.h"
 #import "BaseLayer.h"
 #import "MusicHandler.h"
+
+
+
 @interface MenuLayer : BaseLayer {
 }
 
@@ -15,4 +18,5 @@
 - (void)onResume:(id)sender;
 - (void)onHighscores:(id)sender;
 - (void)onCredits:(id)sender;
+
 @end

@@ -77,6 +77,9 @@
 	return self;
 }
 
+
+#pragma mark - # Action method
+
 - (void)onStartNew:(id)sender{
 	[MusicHandler notifyButtonClick];
 	[User clear];

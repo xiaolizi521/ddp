@@ -19,6 +19,7 @@
 	CCLayer *layer = [MenuLayer node];
 	[SceneManager go: layer];
 }
+
 +(void) goPlay{
 	CCLayer *layer = [PlayLayer node];
 	[SceneManager go: layer];
@@ -54,6 +55,7 @@
 		[director runWithScene:newScene];		
 	}
 }
+
 +(CCScene *) wrap: (CCLayer *) layer{
 	CCScene *newScene = [CCScene node];
 	[newScene addChild: layer];
