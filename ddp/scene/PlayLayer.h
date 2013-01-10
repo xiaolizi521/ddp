@@ -20,10 +20,11 @@
 	int proDt;
 }
 +(id) scene;
--(void) back:(id)sender;
 -(void) changeWithTileA: (Tile *) a TileB: (Tile *) b sel : (SEL) sel;
 -(void) check: (id) sender data: (id) data;
 
+-(void) actionBack:(id)sender;
+-(void) actionChangerAvatar;
 
 //时间进度
 - (void) setPb_bar;

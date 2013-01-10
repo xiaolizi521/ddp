@@ -5,14 +5,19 @@
 
 
 // Game map
-#define kTileSize 40.0f
-#define kMoveTileTime 0.3f
-#define kBoxWidth 7
-#define kBoxHeight 7
-#define kStartX 20
-#define kStartY 170
+#define kTileSize   40.0f
+#define kMoveTileTime   0.3f
+#define kBoxWidth   7
+#define kBoxHeight  7
+#define kStartX     20
+#define kStartY     130
 #define kMaxLevelNo 10
-#define kKindCount 8
+#define kKindCount  8
+
+// The time progress
+#define kProBarWidth    210
+#define kProBarLeftX    30
+#define kProBarY        120
 
 
 //User info
@@ -26,10 +31,10 @@
 
 
 //Record
-#define kMaxRecordCount 5
-#define kRecordName @"kRecordName"
-#define kRecordScore @"kRecordScore"
-#define kRecordTime @"kRecordTime"
+#define kMaxRecordCount     5
+#define kRecordName         @"kRecordName"
+#define kRecordScore        @"kRecordScore"
+#define kRecordTime         @"kRecordTime"
 
 typedef enum {
 	OrientationHori,

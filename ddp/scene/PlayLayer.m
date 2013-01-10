@@ -8,9 +8,6 @@
 #import "PlayLayer.h"
 #import "SceneManager.h"
 
-#define kProBarWidth    210
-#define kProBarLeftX    30
-#define kProBarY        160
 
 @interface PlayLayer()
 
@@ -32,23 +29,48 @@
     
 	self = [super init];
     
+    //头像 按钮
+    CCMenuItemImage *pAvatar = [CCMenuItemImage itemWithNormalImage:@"q1.png" selectedImage:nil block:^(id sender){
+        
+        [self actionChangerAvatar];
+    }];
+    
+    CCMenu *mAvatar = [CCMenu menuWithItems:pAvatar, nil];
+    pAvatar.anchorPoint = ccp(0.0, 1);
+    mAvatar.position = ccp(20.0, 480.0 - 20.0);
+    [self addChild:mAvatar z:0];
+    
+    // 昵称
     NSString *strName = @"Player1";//[UserInfo name];
     CCLabelTTF *lblName = [CCLabelTTF labelWithString:strName fontName:@"Courier New" fontSize:20.0];
     lblName.anchorPoint = ccp(0.0, 1.0);
-    lblName.position = ccp(0.0, 480.0);
+    lblName.position = ccp(70.0, 480.0 - 20.0);
     [self addChild:lblName z:0];
+    
+    // 等级
+    NSString *strLevel = @"Level 1";
+    CCLabelTTF *lblLevel = [CCLabelTTF labelWithString:strLevel fontName:@"Courier New" fontSize:20.0];
+    lblLevel.anchorPoint = ccp(0.0, 1.0);
+    lblLevel.position = ccp(70.0, 480.0 - 40.0);
+    [self addChild:lblLevel z:0];
+    
+    // 积分
+    NSString *strScore = @"1000";
+    CCLabelTTF *lblScore = [CCLabelTTF labelWithString:strScore fontName:@"Courier New" fontSize:30.0];
+    lblScore.anchorPoint = ccp(0.0, 1.0);
+    lblScore.position = ccp(220.0, 480.0 - 25.0);
+    [self addChild:lblScore z:0];
     
     //初始化时间进度条
     [self initProgress];
-
     
     //返回按钮
-    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"back" block:^(id sender){
-        [self back:nil];
+    CCMenuItemFont *pBack = [CCMenuItemFont itemWithString:@"back" block:^(id sender){
+        [self actionBack:nil];
     }];
-    back.fontName = @"Courier New";
+    pBack.fontName = @"Courier New";
     
-    CCMenu *menu = [CCMenu menuWithItems:back, nil];
+    CCMenu *menu = [CCMenu menuWithItems:pBack, nil];
     [menu setPosition:ccp(320 - 40.0, 20.0)];
     [self addChild:menu z:0];
     
@@ -192,8 +214,17 @@
 }
 
 
--(void) back:(id)sender{
+#pragma mark - # Action methods
+
+// 返回主菜单
+-(void) actionBack:(id)sender{
 	[SceneManager goMenu];
+}
+
+// 更换头像
+- (void) actionChangerAvatar{
+    
+    CCLOG(@"更换头像！");
 }
 
 
