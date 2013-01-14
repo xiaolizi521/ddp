@@ -7,6 +7,7 @@
 
 #import "PlayLayer.h"
 #import "SceneManager.h"
+#import "SetUserInfoLayer.h"
 
 
 @interface PlayLayer()
@@ -225,6 +226,10 @@
 - (void) actionChangerAvatar{
     
     CCLOG(@"更换头像！");
+    
+    CCLayer *pUserInfoLayer = [SetUserInfoLayer node];
+    [pUserInfoLayer setSkewX:10];
+    [self addChild:pUserInfoLayer z:1];
 }
 
 
@@ -250,6 +255,7 @@
 	[self progress];
     
 }
+
 - (void) progress{
     
 	

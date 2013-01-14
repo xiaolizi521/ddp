@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */; };
 		A939C1AF169D062300A34F56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1AE169D062300A34F56 /* QuartzCore.framework */; };
 		A939C1B1169D062300A34F56 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B0169D062300A34F56 /* OpenGLES.framework */; };
 		A939C1B3169D062300A34F56 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B2169D062300A34F56 /* OpenAL.framework */; };
@@ -184,6 +185,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9107B57169FAFE400BD4020 /* SetUserInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetUserInfoLayer.h; path = scene/SetUserInfoLayer.h; sourceTree = "<group>"; };
+		A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetUserInfoLayer.m; path = scene/SetUserInfoLayer.m; sourceTree = "<group>"; };
 		A939C1AA169D062300A34F56 /* ddp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A939C1AE169D062300A34F56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A939C1B0169D062300A34F56 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -981,6 +984,8 @@
 				A939C359169D092100A34F56 /* MenuLayer.m */,
 				A939C35E169D092100A34F56 /* PlayLayer.h */,
 				A939C35F169D092100A34F56 /* PlayLayer.m */,
+				A9107B57169FAFE400BD4020 /* SetUserInfoLayer.h */,
+				A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */,
 				A939C354169D092100A34F56 /* CreditsLayer.h */,
 				A939C355169D092100A34F56 /* CreditsLayer.m */,
 				A939C35C169D092100A34F56 /* PauseLayer.h */,
@@ -1272,6 +1277,7 @@
 				A939C379169D092C00A34F56 /* Tile.m in Sources */,
 				A939C37B169D092C00A34F56 /* UserInfo.m in Sources */,
 				A9883C80169D3DB10011A427 /* Progress.m in Sources */,
+				A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
