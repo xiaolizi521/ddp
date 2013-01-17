@@ -27,12 +27,14 @@
 }
 
 -(void) trade: (Tile *)otherTile{
+    
 	CCSprite *tempSprite = [sprite retain];
 	int tempValue = value;
 	self.sprite = otherTile.sprite;
 	self.value = otherTile.value;
 	otherTile.sprite = tempSprite;
 	otherTile.value = tempValue;
+    
 	[tempSprite release];
 }
 

@@ -20,14 +20,17 @@
 
 -(id) initWithSize: (CGSize) aSize factor: (int) aFacotr{
 	self = [super init];
+    
 	size = aSize;
+    
 	OutBorderTile = [[Tile alloc] initWithX:-1 Y:-1];
+    
 	content = [NSMutableArray arrayWithCapacity: size.height];
 	
-	for (int y=0; y<size.height; y++) {
+	for (int y = 0; y < size.height; y++) {
 		
 		NSMutableArray *rowContent = [NSMutableArray arrayWithCapacity:size.width];
-		for (int x=0; x < size.width; x++) {
+		for (int x = 0; x < size.width; x++) {
 			Tile *tile = [[Tile alloc] initWithX:x Y:y];
 			[rowContent addObject:tile];
 			[tile release];
@@ -96,7 +99,7 @@
 	}
 	
 	int count = [objects count];
-	for (int i=0; i<count; i++) {
+	for (int i = 0; i<count; i++) {
 
 		Tile *tile = [objects objectAtIndex:i];
 		tile.value = 0;
@@ -128,8 +131,8 @@
 		if ([self haveMore]) {
 			[self unlock];
 		}else {
-			for (int y=0; y< kBoxHeight; y++) {
-				for (int x=0; x< kBoxWidth; x++) {
+			for (int y = 0; y < kBoxHeight; y++) {
+				for (int x = 0; x < kBoxWidth; x++) {
 					Tile *tile = [self objectAtX:x Y:y];
 					tile.value = 0;
 				}
@@ -146,7 +149,7 @@
 
 -(int) repair{
 	int maxCount = 0;
-	for (int x=0; x<size.width; x++) {
+	for (int x=0; x < size.width; x++) {
 		int count = [self repairSingleColumn:x];
 		if (count > maxCount) {
 			maxCount = count;
@@ -178,14 +181,18 @@
 			}
 	}
 	
-	for (int i=0; i<extension; i++) {
-		int value = (arc4random()%kKindCount+1);
-		Tile *destTile = [self objectAtX:columnIndex Y:kBoxHeight-extension+i];
-		NSString *name = [NSString stringWithFormat:@"q%d.png",value];
-		CCSprite *sprite = [CCSprite spriteWithFile:name];
+	for (int i = 0; i < extension; i++) {
+		int value = (arc4random() % kKindCount + 1);
+		
+        Tile *destTile = [self objectAtX:columnIndex Y:kBoxHeight-extension+i];
+		
+        NSString *name = [NSString stringWithFormat:@"q%d.png",value];
+		
+        CCSprite *sprite = [CCSprite spriteWithFile:name];
 		sprite.position = ccp(kStartX + columnIndex * kTileSize + kTileSize/2, kStartY + (kBoxHeight + i) * kTileSize + kTileSize/2);
 		CCSequence *action = [CCSequence actions:
-							  [CCMoveBy actionWithDuration:kMoveTileTime*extension position:ccp(0,-kTileSize*extension)],
+							  [CCMoveBy actionWithDuration:kMoveTileTime * extension
+                                                  position:ccp(0,- kTileSize * extension)],
 							  nil];
 		[layer addChild: sprite];
 		[sprite runAction: action];
@@ -196,8 +203,8 @@
 }
 
 -(BOOL) haveMore{
-	for (int y=0; y<size.height; y++) {
-		for (int x=0; x<size.width; x++) {
+	for (int y = 0; y < size.height; y++) {
+		for (int x = 0; x<size.width; x++) {
 			Tile *aTile = [self objectAtX:x Y:y];
 			
 			//v 1 2
