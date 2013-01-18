@@ -7,6 +7,7 @@
 
 
 #import "Constants.h"
+#import "Level.h"
 #import "Tile.h"
 #import "CCLayer.h"
 #import "Constants.h"
@@ -20,12 +21,16 @@
 	BOOL lock;
 	CCLayer *layer;
 	Tile *OutBorderTile;
+   
 }
+@property (nonatomic, strong) CCArray *arrFace;
+@property (nonatomic, strong) Level *level;
+@property (nonatomic, strong) CCLayer *layer;
+@property (nonatomic, readonly) CGSize size;
+@property (nonatomic) BOOL lock;
 
-@property(nonatomic, retain) CCLayer *layer;
-@property(nonatomic, readonly) CGSize size;
-@property(nonatomic) BOOL lock;
--(id) initWithSize: (CGSize) size factor: (int) facotr;
+
+-(id) initWithSize: (CGSize) size level: (Level*) alevel;
 -(Tile *) objectAtX: (int) posX Y: (int) posY;
 -(BOOL) check;
 -(void) unlock;

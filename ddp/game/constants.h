@@ -1,8 +1,19 @@
 
 
+#import "cocos2d.h"
 
 
+//Game logic
+#define kTimeLimit         30
+#define kFactor          14
 
+#define kScheduleInterval 0.5f
+#define kTimeLabelTag 900
+#define kScoreLabelTag 901
+#define kComboTag 902
+#define kComboNOTag 903
+#define kStartHint 904
+#define kMenuTag 905
 
 // Game map
 #define kTileSize   40.0f
@@ -40,3 +51,4 @@ typedef enum {
 	OrientationHori,
 	OrientationVert,
 } Orientation;
+

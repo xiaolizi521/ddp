@@ -6,8 +6,14 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
+
+
+#define kColumnCount 13
+#define kColumnCenter 6
+#define kRowCount 11
+#define kRowCenter 5
 
 typedef enum _TileMoveType {
 	TileMove_NoMove = 0,
@@ -22,18 +28,23 @@ typedef enum _TileMoveType {
 @interface Level : NSObject
 
 
-@property (nonatomic) int no;
+@property (nonatomic) int num;
 @property (nonatomic) int factor;
 @property (nonatomic) TileMoveType tileMoveType;
 @property (nonatomic) int timeLimit;
 @property (nonatomic, readonly) int tileCount;
-@property (nonatomic, readonly) int ballCount;
+@property (nonatomic, readonly) int faceCount;
+
+
+-(BOOL) fillWithColumn: (int) columnIndex row: (int) rowIndex;
+-(int) ballCountRepaired;
+-(CCArray *)getArrFace:(Level *)alevel;
 
 @end
 
 
 @interface LevelManager : NSObject
 
-+(Level *) get:(int) no;
++(Level *) getLevel:(int) num;
 
 @end;

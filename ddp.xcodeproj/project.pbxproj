@@ -10,6 +10,7 @@
 		A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */; };
 		A92D62C916A8F1E500D39FBB /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = A92D62C616A8F1E500D39FBB /* Level.m */; };
 		A92D62CA16A8F1E500D39FBB /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = A92D62C816A8F1E500D39FBB /* Skills.m */; };
+		A92D62CD16A90F7100D39FBB /* NameInputAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A92D62CC16A90F7100D39FBB /* NameInputAlertViewDelegate.m */; };
 		A939C1AF169D062300A34F56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1AE169D062300A34F56 /* QuartzCore.framework */; };
 		A939C1B1169D062300A34F56 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B0169D062300A34F56 /* OpenGLES.framework */; };
 		A939C1B3169D062300A34F56 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B2169D062300A34F56 /* OpenAL.framework */; };
@@ -193,6 +194,8 @@
 		A92D62C616A8F1E500D39FBB /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = game/Level.m; sourceTree = "<group>"; };
 		A92D62C716A8F1E500D39FBB /* Skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skills.h; path = game/Skills.h; sourceTree = "<group>"; };
 		A92D62C816A8F1E500D39FBB /* Skills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Skills.m; path = game/Skills.m; sourceTree = "<group>"; };
+		A92D62CB16A90F7000D39FBB /* NameInputAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NameInputAlertViewDelegate.h; path = scene/NameInputAlertViewDelegate.h; sourceTree = "<group>"; };
+		A92D62CC16A90F7100D39FBB /* NameInputAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NameInputAlertViewDelegate.m; path = scene/NameInputAlertViewDelegate.m; sourceTree = "<group>"; };
 		A939C1AA169D062300A34F56 /* ddp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A939C1AE169D062300A34F56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A939C1B0169D062300A34F56 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1002,6 +1005,8 @@
 				A939C35D169D092100A34F56 /* PauseLayer.m */,
 				A939C356169D092100A34F56 /* HighScoresLayer.h */,
 				A939C357169D092100A34F56 /* HighScoresLayer.m */,
+				A92D62CB16A90F7000D39FBB /* NameInputAlertViewDelegate.h */,
+				A92D62CC16A90F7100D39FBB /* NameInputAlertViewDelegate.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1290,6 +1295,7 @@
 				A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */,
 				A92D62C916A8F1E500D39FBB /* Level.m in Sources */,
 				A92D62CA16A8F1E500D39FBB /* Skills.m in Sources */,
+				A92D62CD16A90F7100D39FBB /* NameInputAlertViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1344,6 +1350,10 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ddp/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEBUG,
+					"COCOS2D_DEBUG=1",
+				);
 				HEADER_SEARCH_PATHS = "\"ddp/libs/kazmath/include\"";
 				INFOPLIST_FILE = ddp/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

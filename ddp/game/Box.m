@@ -14,34 +14,54 @@
 @end
 
 @implementation Box
+@synthesize level;
 @synthesize layer;
 @synthesize size;
 @synthesize lock;
+@synthesize arrFace;
 
--(id) initWithSize: (CGSize) aSize factor: (int) aFacotr{
-	self = [super init];
+
+- (void)dealloc{
+
+    [arrFace release];
+    [level release];
+    [layer release];
     
-	size = aSize;
-    
-	OutBorderTile = [[Tile alloc] initWithX:-1 Y:-1];
-    
-	content = [NSMutableArray arrayWithCapacity: size.height];
+    [super dealloc];
+}
+
+-(id) initWithSize: (CGSize) aSize level: (Level*) alevel{
 	
-	for (int y = 0; y < size.height; y++) {
-		
-		NSMutableArray *rowContent = [NSMutableArray arrayWithCapacity:size.width];
-		for (int x = 0; x < size.width; x++) {
-			Tile *tile = [[Tile alloc] initWithX:x Y:y];
-			[rowContent addObject:tile];
-			[tile release];
-		}
-		[content addObject:rowContent];
-		[content retain];
-	}
-	
-	readyToRemoveTiles = [NSMutableSet setWithCapacity:5];
-	[readyToRemoveTiles retain];
-	return self;
+    if (self = [super init]) {
+        
+        //self.level = alevel;
+        
+//        level = [[Level alloc] init];
+//        self.arrFace = [level getArrFace:alevel];
+        
+        size = aSize;
+        
+        OutBorderTile = [[Tile alloc] initWithX:-1 Y:-1];
+        
+        content = [NSMutableArray arrayWithCapacity: size.height];
+        
+        for (int y = 0; y < size.height; y++) {
+            
+            NSMutableArray *rowContent = [NSMutableArray arrayWithCapacity:size.width];
+            for (int x = 0; x < size.width; x++) {
+                Tile *tile = [[Tile alloc] initWithX:x Y:y];
+                [rowContent addObject:tile];
+                [tile release];
+            }
+            [content addObject:rowContent];
+            [content retain];
+        }
+        
+        readyToRemoveTiles = [NSMutableSet setWithCapacity:5];
+        [readyToRemoveTiles retain];
+    }
+
+    return self;
 }
 
 -(Tile *) objectAtX: (int) x Y: (int) y{
@@ -160,7 +180,7 @@
 				 
 -(int) repairSingleColumn: (int) columnIndex{
 	int extension = 0;
-	for (int y=0; y<size.height; y++) {
+	for (int y = 0; y < size.height; y++) {
 		Tile *tile = [self objectAtX:columnIndex Y:y];
 			if(tile.value == 0){
 				extension++;
@@ -170,7 +190,7 @@
 				Tile *destTile = [self objectAtX:columnIndex Y:y-extension];
 				
 				CCSequence *action = [CCSequence actions:
-									  [CCMoveBy actionWithDuration:kMoveTileTime*extension position:ccp(0,-kTileSize*extension)],
+									  [CCMoveBy actionWithDuration:kMoveTileTime * extension position:ccp(0,-kTileSize * extension)],
 									  nil];
 				
 				[tile.sprite runAction: action];
@@ -186,7 +206,8 @@
 		
         Tile *destTile = [self objectAtX:columnIndex Y:kBoxHeight-extension+i];
 		
-        NSString *name = [NSString stringWithFormat:@"q%d.png",value];
+       // NSString *name = [self.arrFace objectAtIndex:value];
+         NSString *name = [NSString stringWithFormat:@"q%d.png",value];
 		
         CCSprite *sprite = [CCSprite spriteWithFile:name];
 		sprite.position = ccp(kStartX + columnIndex * kTileSize + kTileSize/2, kStartY + (kBoxHeight + i) * kTileSize + kTileSize/2);
