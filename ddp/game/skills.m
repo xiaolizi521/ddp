@@ -1,13 +1,13 @@
 //
-//  skills.m
+//  Skills.m
 //  ddp
 //
 //  Created by Liu Lei on 13-1-17.
 //
 //
 
-#import "skills.h"
+#import "Skills.h"
 
-@implementation skills
+@implementation Skills
 
 @end

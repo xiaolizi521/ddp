@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FA3C7C916A840510040AEBD /* level.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3C7C816A840510040AEBD /* level.m */; };
-		8FA3C7CD16A840640040AEBD /* skills.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3C7CC16A840640040AEBD /* skills.m */; };
 		A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */; };
+		A92D62C916A8F1E500D39FBB /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = A92D62C616A8F1E500D39FBB /* Level.m */; };
+		A92D62CA16A8F1E500D39FBB /* Skills.m in Sources */ = {isa = PBXBuildFile; fileRef = A92D62C816A8F1E500D39FBB /* Skills.m */; };
 		A939C1AF169D062300A34F56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1AE169D062300A34F56 /* QuartzCore.framework */; };
 		A939C1B1169D062300A34F56 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B0169D062300A34F56 /* OpenGLES.framework */; };
 		A939C1B3169D062300A34F56 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A939C1B2169D062300A34F56 /* OpenAL.framework */; };
@@ -187,12 +187,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8FA3C7C716A840510040AEBD /* level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = level.h; path = game/level.h; sourceTree = "<group>"; };
-		8FA3C7C816A840510040AEBD /* level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = level.m; path = game/level.m; sourceTree = "<group>"; };
-		8FA3C7CB16A840640040AEBD /* skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = skills.h; path = game/skills.h; sourceTree = "<group>"; };
-		8FA3C7CC16A840640040AEBD /* skills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = skills.m; path = game/skills.m; sourceTree = "<group>"; };
 		A9107B57169FAFE400BD4020 /* SetUserInfoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetUserInfoLayer.h; path = scene/SetUserInfoLayer.h; sourceTree = "<group>"; };
 		A9107B58169FAFE400BD4020 /* SetUserInfoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetUserInfoLayer.m; path = scene/SetUserInfoLayer.m; sourceTree = "<group>"; };
+		A92D62C516A8F1E500D39FBB /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Level.h; path = game/Level.h; sourceTree = "<group>"; };
+		A92D62C616A8F1E500D39FBB /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Level.m; path = game/Level.m; sourceTree = "<group>"; };
+		A92D62C716A8F1E500D39FBB /* Skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skills.h; path = game/Skills.h; sourceTree = "<group>"; };
+		A92D62C816A8F1E500D39FBB /* Skills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Skills.m; path = game/Skills.m; sourceTree = "<group>"; };
 		A939C1AA169D062300A34F56 /* ddp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ddp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A939C1AE169D062300A34F56 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A939C1B0169D062300A34F56 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -963,10 +963,10 @@
 			isa = PBXGroup;
 			children = (
 				A93AE6AC169E6B6C002B07CD /* Constants.h */,
-				8FA3C7C716A840510040AEBD /* level.h */,
-				8FA3C7C816A840510040AEBD /* level.m */,
-				8FA3C7CB16A840640040AEBD /* skills.h */,
-				8FA3C7CC16A840640040AEBD /* skills.m */,
+				A92D62C516A8F1E500D39FBB /* Level.h */,
+				A92D62C616A8F1E500D39FBB /* Level.m */,
+				A92D62C716A8F1E500D39FBB /* Skills.h */,
+				A92D62C816A8F1E500D39FBB /* Skills.m */,
 				A939C36A169D092C00A34F56 /* Box.h */,
 				A939C36B169D092C00A34F56 /* Box.m */,
 				A939C36D169D092C00A34F56 /* Game.h */,
@@ -1288,8 +1288,8 @@
 				A939C37B169D092C00A34F56 /* UserInfo.m in Sources */,
 				A9883C80169D3DB10011A427 /* Progress.m in Sources */,
 				A9107B59169FAFE400BD4020 /* SetUserInfoLayer.m in Sources */,
-				8FA3C7C916A840510040AEBD /* level.m in Sources */,
-				8FA3C7CD16A840640040AEBD /* skills.m in Sources */,
+				A92D62C916A8F1E500D39FBB /* Level.m in Sources */,
+				A92D62CA16A8F1E500D39FBB /* Skills.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

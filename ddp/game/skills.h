@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface skills : NSObject
+@interface Skills : NSObject
 
 @end
