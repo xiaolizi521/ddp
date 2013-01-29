@@ -119,7 +119,7 @@
 	}
 	
 	int count = [objects count];
-	for (int i = 0; i<count; i++) {
+	for (int i = 0; i < count; i++) {
 
 		Tile *tile = [objects objectAtIndex:i];
 		tile.value = 0;

@@ -13,19 +13,25 @@
 @synthesize x, y, value, sprite;
 
 -(id) initWithX: (int) posX Y: (int) posY{
-	self = [super init];
-	x = posX;
-	y = posY;
+    
+    if (self = [super init]) {
+        x = posX;
+        y = posY;
+    }
+    
 	return self;
 }
 
 -(BOOL) nearTile: (Tile *)othertile{
+    
 	return 
 	(x == othertile.x && abs(y - othertile.y)==1)
 	||
 	(y == othertile.y && abs(x - othertile.x)==1);
 }
 
+
+//互相交换，互相对换
 -(void) trade: (Tile *)otherTile{
     
 	CCSprite *tempSprite = [sprite retain];
