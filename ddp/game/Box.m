@@ -7,7 +7,6 @@
 #import "Box.h"
 
 
-
 @interface Box()
 -(int) repair;
 -(int) repairSingleColumn: (int) columnIndex;
@@ -19,6 +18,8 @@
 @synthesize size;
 @synthesize lock;
 @synthesize arrFace;
+@synthesize comboCount;//连击次数
+@synthesize intScore;
 
 
 - (void)dealloc{
@@ -109,16 +110,18 @@
 	}
 }
 
--(BOOL) check{
+-(int) check{
 	[self checkWith:OrientationHori];	
 	[self checkWith:OrientationVert];
 	
 	NSArray *objects = [[readyToRemoveTiles objectEnumerator] allObjects];
 	if ([objects count] == 0) {
-		return NO;
+		return 0; //没有消除  返回0分
 	}
 	
 	int count = [objects count];
+    
+    CCLOG(@"个数：%d", count);
 	for (int i = 0; i < count; i++) {
 
 		Tile *tile = [objects objectAtIndex:i];
@@ -131,14 +134,40 @@
 		}
 	}
 
+    self.comboCount++;//连击次数
+    
 	[readyToRemoveTiles removeAllObjects];
 	int maxCount = [self repair];
 	
 	[layer runAction: [CCSequence actions: [CCDelayTime actionWithDuration: kMoveTileTime * maxCount + 0.03f],
 					   [CCCallFunc actionWithTarget:self selector:@selector(afterAllMoveDone)],
 					   nil]];
-	return YES;
+    
+    switch (self.comboCount) {
+        case 1:
+            self.intScore = 5 * count / 3;
+            break;
+        case 2:
+            self.intScore = 10 + 5 * count / 3;
+            break;
+        case 3:
+            self.intScore = 20 + 5 * count / 3;
+            break;
+        case 4:
+            self.intScore = 30 + 5 * count / 3;
+            break;
+        case 5:
+        case 6:
+        case 7:
+            self.intScore = 50 + 5 * count / 3;
+            break;
+        default:
+            break;
+    }
+    
+	return self.intScore;
 }
+
 
 -(void) removeSprite: (id) sender{
 	[layer removeChild: sender cleanup:YES];

@@ -203,6 +203,7 @@ CCLabelTTF * ccLP(NSString * value, float fontSize, CGPoint pos){
 	}
 }
 
+// 点击触发
 - (void)ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event{
     
     CCLOG(@"method:ccTouchesBegan");
@@ -221,7 +222,7 @@ CCLabelTTF * ccLP(NSString * value, float fontSize, CGPoint pos){
 	int y = (location.y - kStartY) / kTileSize;
 	
 	
-	if (selectedTile && selectedTile.x ==x && selectedTile.y == y) {
+	if (selectedTile && selectedTile.x == x && selectedTile.y == y) {
 		return;
 	}
 	
@@ -277,10 +278,11 @@ CCLabelTTF * ccLP(NSString * value, float fontSize, CGPoint pos){
 		firstOne = data;
 		return;
 	}
-	BOOL result = [box check];
-	if (result) {
-		[box setLock:NO];	
-	}else {
+	int result = [box check];
+    CCLOG(@"result = %d", result);
+	if (result != 0) {//消除成功
+		[box setLock:NO];
+	}else {//换回去
 		[self changeWithTileA:(Tile *)data TileB:firstOne sel:@selector(backCheck:data:)]; 
 		[self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:kMoveTileTime + 0.03f],
 						 [CCCallFunc actionWithTarget:box selector:@selector(unlock)],

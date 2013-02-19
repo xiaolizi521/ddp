@@ -17,22 +17,22 @@
 	
     // 开始
     [CCMenuItemFont setFontName: @"Marker Felt"];
-    CCMenuItemFont *startNew = [CCMenuItemFont itemWithString:@"New Game" block:^(id sender) {        
+    CCMenuItemFont *startNew = [CCMenuItemFont itemWithString:NSLocalizedString(@"Play", nil) block:^(id sender) {
         [self onStartNew:nil];
     }];
     
     // 继续
-    CCMenuItemFont *resume = [CCMenuItemFont itemWithString:@"Continue" block:^(id sender) {
+    CCMenuItemFont *resume = [CCMenuItemFont itemWithString:NSLocalizedString(@"Continue", nil)  block:^(id sender) {
         [self onResume:nil];
     }];
     
     // 排行
-    CCMenuItemFont *highscores = [CCMenuItemFont itemWithString:@"Record" block:^(id sender) {
+    CCMenuItemFont *highscores = [CCMenuItemFont itemWithString:NSLocalizedString(@"Record", nil)  block:^(id sender) {
         [self onHighscores:nil];
     }];
    
     // 配置
-    CCMenuItemFont *credits = [CCMenuItemFont itemWithString:@"Credits" block:^(id sender) {
+    CCMenuItemFont *credits = [CCMenuItemFont itemWithString:NSLocalizedString(@"Setting", nil)  block:^(id sender) {
         [self onCredits:nil];
     }];
     
