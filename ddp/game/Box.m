@@ -322,8 +322,6 @@
 							return YES;
 						}
 					}
-					
-					
 				
 					{
 						Tile *cTile = [self objectAtX:x-1 Y:y-1];
